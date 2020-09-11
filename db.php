@@ -21,7 +21,7 @@ class createDB{
 
 			$this->db_name = $db_name;
 			$this->server = $server;
-			$this->table_name = $table_name;F
+			$this->table_name = $table_name;
 			$this->user = $user;
 			$this->password = $password;
 
