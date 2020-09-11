@@ -51,7 +51,7 @@ $content = new createDB();
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">TopVideoFeeds</a>
+                <a class="navbar-brand" href="index.php">TopVideoFeeds</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -119,6 +119,53 @@ $content = new createDB();
             </div>
         </div>
     </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <?php 
+                $result =  $content->getData('content');
+
+                if ($result){
+                    while ($row = mysqli_fetch_assoc($result)){ ?>
+
+                <div class="post-preview">
+                    <a href="post.php?id=<?php echo $row['id'] ?>">
+                        <h2 class="post-title">
+                            <?php echo $row['title'] ?>
+                           
+                        </h2>
+                        
+                    </a>
+                    <p class="post-meta">Posted on <?php echo $row['tm'] ?></p>
+                    <br><button name="deletepost" value="<?php echo $row['id'] ?> " class="btn-danger" onclick="return confirm('Delete Quote? ');" >Delete</button>
+                    <?php 
+
+                        if (isset($_POST['deletepost'])){
+                            $id = $_POST['deletepost'];
+
+                            $content->deletePost('content',$id);
+                        }
+                     ?>
+                </div>
+                <hr>
+
+
+
+                  <?php  }
+                }
+
+                 ?>
+               
+                
+                
+              
+            </div>
+        </div>
+    </div>
+
+    
 
     <?php 
         function test_input($data) {

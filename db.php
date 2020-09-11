@@ -21,7 +21,7 @@ class createDB{
 
 			$this->db_name = $db_name;
 			$this->server = $server;
-			$this->table_name = $table_name;
+			$this->table_name = $table_name;F
 			$this->user = $user;
 			$this->password = $password;
 
@@ -51,7 +51,7 @@ class createDB{
 					(id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 					title VARCHAR(255),
 					body VARCHAR(255),
-					tm DATETIME DEFAULT CURRENT_TIMESTAMP)
+					tm TIMESTAMP DEFAULT CURRENT_TIMESTAMP)
 					";
 
 				//execute query
