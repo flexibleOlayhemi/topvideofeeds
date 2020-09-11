@@ -139,15 +139,8 @@ $content = new createDB();
                         
                     </a>
                     <p class="post-meta">Posted on <?php echo $row['tm'] ?></p>
-                    <br><button name="deletepost" value="<?php echo $row['id'] ?> " class="btn-danger" onclick="return confirm('Delete Quote? ');" >Delete</button>
-                    <?php 
-
-                        if (isset($_POST['deletepost'])){
-                            $id = $_POST['deletepost'];
-
-                            $content->deletePost('content',$id);
-                        }
-                     ?>
+                    <br><button name="deletepost" value="<?php echo $row['id'] ?> " class="btn-default" onclick="return confirm('Delete Quote? ');" >Delete</button>
+                    
                 </div>
                 <hr>
 
@@ -182,6 +175,12 @@ $content = new createDB();
             $body = test_input($_POST['cbody']);
             $content->insertToDb('content',$title,$body);
         }
+
+        if (isset($_POST['deletepost'])){
+                            $id = $_POST['deletepost'];
+
+                            $content->deletePost('content',$id);
+                        }
 
      ?>
 
