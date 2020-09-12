@@ -5,7 +5,7 @@ $content = new createDB();
 
 //
 
- define("MAX_RESULTS", 10);
+ define("MAX_RESULTS", 5);
     
 
 ?>
