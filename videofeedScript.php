@@ -4,7 +4,7 @@
 
             if (!empty($keyword))
               {
-                $apikey = 'AIzaSyCBI44FwNrtU-__zw__WnEP1kXUdKPNEQk'; 
+                $apikey = 'AIzaSyA0Gj149pMgGJsotixeHZFgJ034oc31ArY'; 
                 $googleApiUrl = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' . $keyword . '&maxResults=' . MAX_RESULTS . '&key=' . $apikey;
 
                 $ch = curl_init();
